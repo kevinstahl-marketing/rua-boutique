@@ -1,20 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "image_banner_kevin_4Ctjyt": {
+      "type": "image-banner-kevin",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "image_BtPUbw": {
+          "type": "image",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "image": "shopify://shop_images/Untitled_design_6.png",
+            "image_width": 180,
+            "image_width_mobile": 120,
+            "alignment": "center",
+            "border_radius": 0
           }
         },
-        "button": {
+        "text_MwjEEL": {
+          "type": "text",
+          "settings": {
+            "text": "<em>Wear What Inspires You</em>",
+            "text_style": "subtitle",
+            "font_size": 22,
+            "font_size_mobile": 16,
+            "font_weight": "300",
+            "letter_spacing": 1.5,
+            "line_height": 155,
+            "text_transform": "none"
+          }
+        },
+        "buttons_dM9Ck8": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "EXPLORE THE COLLECTION",
+            "button_link_1": "",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -23,39 +48,46 @@
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "image_BtPUbw",
+        "text_MwjEEL",
+        "buttons_dM9Ck8"
       ],
+      "custom_css": [
+        ".banner__text.subtitle {font-size: 1.4rem; letter-spacing: 0.18em;}"
+      ],
+      "name": "Image Banner - Kevin",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
+        "image": "shopify://shop_images/photo-1680097727138-5034841dcd55.jpg",
+        "image_overlay_opacity": 50,
+        "image_height": "medium",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "",
+        "block_spacing": 0,
+        "block_spacing_mobile": 0,
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,13 +95,55 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "image_banner_hQLNXM": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_yUfrQ3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "buttons_HhcUER": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": true,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yUfrQ3",
+        "buttons_HhcUER"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "image_banner_kevin_4Ctjyt",
+    "featured_collection",
+    "image_banner_hQLNXM"
   ]
 }
