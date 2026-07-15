@@ -27,11 +27,11 @@
           "settings": {
             "text": "<em>Wear What Inspires You</em>",
             "text_style": "subtitle",
-            "font_size": 22,
-            "font_size_mobile": 16,
+            "font_size": 29,
+            "font_size_mobile": 23,
             "font_weight": "300",
-            "letter_spacing": 1.5,
-            "line_height": 155,
+            "letter_spacing": -0.5,
+            "line_height": 140,
             "text_transform": "none"
           }
         },
@@ -53,7 +53,7 @@
         "buttons_dM9Ck8"
       ],
       "custom_css": [
-        ".banner__text.subtitle {font-size: 1.4rem; letter-spacing: 0.18em;}"
+        ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0rem;}"
       ],
       "name": "Image Banner - Kevin",
       "settings": {
@@ -65,8 +65,8 @@
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "",
-        "block_spacing": 0,
-        "block_spacing_mobile": 0,
+        "block_spacing": 46,
+        "block_spacing_mobile": 24,
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "show_text_below": false
@@ -74,21 +74,28 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "custom_css": [
+        ".collection__title {display: flex; flex-direction: column; align-items: center; text-align: center;}",
+        ".collection__description {order: 1;}",
+        ".collection__description p {font-size: 1rem; color: #c5a253; letter-spacing: 0.35rem;}",
+        ".collection__title .title {order: 2; padding-top: 12px; padding-bottom: 18px; background-image: linear-gradient(#c5a253, #c5a253); background-repeat: no-repeat; background-position: center bottom; background-size: 50px 1px;}",
+        ".collection slider-component {margin-top: 8rem;}"
+      ],
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
+        "title": "Feautred Pieces",
+        "heading_size": "h1",
+        "description": "<p>CURATED SELECTION</p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "view_all_style": "link",
+        "color_scheme": "scheme-2",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
@@ -96,54 +103,97 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
-    "image_banner_hQLNXM": {
-      "type": "image-banner",
+    "image_banner_kevin_peHKWi": {
+      "type": "image-banner-kevin",
       "blocks": {
-        "heading_yUfrQ3": {
+        "text_VpajDE": {
+          "type": "text",
+          "settings": {
+            "text": "OUR PHILOSOPHY",
+            "text_style": "body",
+            "font_size": 16,
+            "font_size_mobile": 14,
+            "font_weight": "400",
+            "letter_spacing": 0,
+            "line_height": 150,
+            "text_transform": "none"
+          }
+        },
+        "heading_wmbM6X": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Style, Curated with <em>Intention</em>",
             "heading_size": "h1"
           }
         },
-        "buttons_HhcUER": {
+        "divider_EamcBx": {
+          "type": "divider",
+          "settings": {
+            "width": 30,
+            "thickness": 1,
+            "color": "#c5a253"
+          }
+        },
+        "text_eAhcPf": {
+          "type": "text",
+          "settings": {
+            "text": "We believe great style starts with pieces you'll love long after the season ends — timeless silhouettes, modern details, and effortless versatility for every occasion.",
+            "text_style": "body",
+            "font_size": 16,
+            "font_size_mobile": 14,
+            "font_weight": "400",
+            "letter_spacing": 0,
+            "line_height": 150,
+            "text_transform": "none"
+          }
+        },
+        "buttons_tqPxmJ": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
+            "button_label_1": "SHOP NOW",
             "button_link_1": "",
             "button_style_secondary_1": true,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading_yUfrQ3",
-        "buttons_HhcUER"
+        "text_VpajDE",
+        "heading_wmbM6X",
+        "divider_EamcBx",
+        "text_eAhcPf",
+        "buttons_tqPxmJ"
       ],
-      "name": "t:sections.image-banner.presets.name",
+      "custom_css": [
+        ".banner__box {background-color: rgba(10, 10, 10, 0.6); backdrop-filter: blur(2px); height: 100%;}"
+      ],
+      "name": "Image Banner - Kevin",
       "settings": {
-        "image_overlay_opacity": 0,
+        "image": "shopify://shop_images/photo-1603748463844-2c32de7d40dd.avif",
+        "image_overlay_opacity": 20,
         "image_height": "medium",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
         "show_text_box": true,
         "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+        "block_spacing": 20,
+        "block_spacing_mobile": 16,
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "left",
+        "show_text_below": false
       }
     }
   },
   "order": [
     "image_banner_kevin_4Ctjyt",
     "featured_collection",
-    "image_banner_hQLNXM"
+    "image_banner_kevin_peHKWi"
   ]
 }

@@ -2,17 +2,17 @@
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
   {%- style -%}
-    @media screen and (max-width: 749px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before,
-      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
-        content: '';
-        display: block;
-      }
-    }
+            @media screen and (max-width: 749px) {
+              #Banner-{{ section.id }}::before,
+              #Banner-{{ section.id }} .banner__media::before,
+              #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
+                padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+                content: '';
+                display: block;
+              }
+            }
 
-    @media screen and (min-width: 750px) {
+            @media screen and (min-width: 750px) {
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before {
         padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
@@ -24,55 +24,51 @@
 {%- endif -%}
 
 {%- style -%}
-  #Banner-{{ section.id }}::after {
-    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-  }
+    #Banner-{{ section.id }}::after {
+      opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    }
 
-  #Banner-{{ section.id }} .banner__box {
-    display: flex;
-    flex-direction: column;
-    gap: {{ section.settings.block_spacing }}px;
-  }
-
-  #Banner-{{ section.id }} .banner__box > * {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  #Banner-{{ section.id }} .banner__block-image {
-    display: flex;
-    width: 100%;
-  }
-
-  #Banner-{{ section.id }} .banner__block-image--left {
-    justify-content: flex-start;
-  }
-
-  #Banner-{{ section.id }} .banner__block-image--center {
-    justify-content: center;
-  }
-
-  #Banner-{{ section.id }} .banner__block-image--right {
-    justify-content: flex-end;
-  }
-
-  #Banner-{{ section.id }} .banner__block-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: var(--block-image-width);
-    border-radius: var(--block-image-radius);
+    #Banner-{{ section.id }} .banner__box > * + * {
+    margin-top: {{ section.settings.block_spacing }}px;
   }
 
   @media screen and (max-width: 749px) {
-    #Banner-{{ section.id }} .banner__box {
-      gap: {{ section.settings.block_spacing_mobile }}px;
+    #Banner-{{ section.id }} .banner__box > * + * {
+      margin-top: {{ section.settings.block_spacing_mobile }}px;
+    }
+  }
+
+
+    #Banner-{{ section.id }} .banner__block-image {
+      display: flex;
+      width: 100%;
+    }
+
+    #Banner-{{ section.id }} .banner__block-image--left {
+      justify-content: flex-start;
+    }
+
+    #Banner-{{ section.id }} .banner__block-image--center {
+      justify-content: center;
+    }
+
+    #Banner-{{ section.id }} .banner__block-image--right {
+      justify-content: flex-end;
     }
 
     #Banner-{{ section.id }} .banner__block-image img {
-      max-width: var(--block-image-width-mobile);
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: var(--block-image-width);
+      border-radius: var(--block-image-radius);
     }
-  }
+
+    @media screen and (max-width: 749px) {
+      #Banner-{{ section.id }} .banner__block-image img {
+        max-width: var(--block-image-width-mobile);
+      }
+    }
 {%- endstyle -%}
 
 {%- liquid
@@ -257,6 +253,19 @@
                 </a>
               {%- endif -%}
             </div>
+          {%- when 'divider' -%}
+            <div
+              class="banner__divider"
+              style="
+                display: block;
+                width: {{ block.settings.width }}px;
+                height: {{ block.settings.thickness }}px;
+                background-color: {{ block.settings.color }};
+                padding: 0;
+                flex-shrink: 0;
+              "
+              {{ block.shopify_attributes }}
+            ></div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -700,6 +709,38 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "name": "Divider",
+      "settings": [
+        {
+          "type": "range",
+          "id": "width",
+          "label": "Width",
+          "min": 20,
+          "max": 300,
+          "step": 10,
+          "unit": "px",
+          "default": 80
+        },
+        {
+          "type": "range",
+          "id": "thickness",
+          "label": "Thickness",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#c5a253"
         }
       ]
     },

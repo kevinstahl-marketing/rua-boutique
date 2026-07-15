@@ -26,7 +26,7 @@
         "announcement-bar-0"
       ],
       "custom_css": [
-        ".announcement-bar__message {font-family: \"Lato\", sans-serif; font-size: 0.95rem; font-weight: 200; letter-spacing: 0.32em; text-transform: uppercase; opacity: 0.65; align-content: center;}"
+        ".announcement-bar__message {font-family: \"Lato\", sans-serif; font-size: 0.95rem; font-weight: 400 !important; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.65; align-content: center;}"
       ],
       "settings": {
         "auto_rotate": false,
