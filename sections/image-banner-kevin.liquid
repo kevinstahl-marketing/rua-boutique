@@ -24,51 +24,53 @@
 {%- endif -%}
 
 {%- style -%}
-    #Banner-{{ section.id }}::after {
-      opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-    }
+      #Banner-{{ section.id }}::after {
+        opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+      }
 
-    #Banner-{{ section.id }} .banner__box > * + * {
-    margin-top: {{ section.settings.block_spacing }}px;
-  }
-
-  @media screen and (max-width: 749px) {
-    #Banner-{{ section.id }} .banner__box > * + * {
-      margin-top: {{ section.settings.block_spacing_mobile }}px;
-    }
-  }
-
-
-    #Banner-{{ section.id }} .banner__block-image {
-      display: flex;
-      width: 100%;
-    }
-
-    #Banner-{{ section.id }} .banner__block-image--left {
-      justify-content: flex-start;
-    }
-
-    #Banner-{{ section.id }} .banner__block-image--center {
-      justify-content: center;
-    }
-
-    #Banner-{{ section.id }} .banner__block-image--right {
-      justify-content: flex-end;
-    }
-
-    #Banner-{{ section.id }} .banner__block-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-width: var(--block-image-width);
-      border-radius: var(--block-image-radius);
+      #Banner-{{ section.id }} .banner__box > * + * {
+      margin-top: {{ section.settings.block_spacing }}px;
     }
 
     @media screen and (max-width: 749px) {
-      #Banner-{{ section.id }} .banner__block-image img {
-        max-width: var(--block-image-width-mobile);
+      #Banner-{{ section.id }} .banner__box > * + * {
+        margin-top: {{ section.settings.block_spacing_mobile }}px;
       }
     }
+
+
+      #Banner-{{ section.id }} .banner__block-image {
+        display: flex;
+        width: 100%;
+      }
+
+      #Banner-{{ section.id }} .banner__block-image--left {
+        justify-content: flex-start;
+      }
+
+      #Banner-{{ section.id }} .banner__block-image--center {
+        justify-content: center;
+      }
+
+      #Banner-{{ section.id }} .banner__block-image--right {
+        justify-content: flex-end;
+      }
+
+      #Banner-{{ section.id }} .banner__block-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: var(--block-image-width);
+        border-radius: var(--block-image-radius);
+      }
+
+      @media screen and (max-width: 749px) {
+        #Banner-{{ section.id }} .banner__block-image img {
+          max-width: var(--block-image-width-mobile);
+        }
+      }
+
+
 {%- endstyle -%}
 
 {%- liquid
@@ -253,19 +255,30 @@
                 </a>
               {%- endif -%}
             </div>
-          {%- when 'divider' -%}
-            <div
-              class="banner__divider"
-              style="
-                display: block;
-                width: {{ block.settings.width }}px;
-                height: {{ block.settings.thickness }}px;
-                background-color: {{ block.settings.color }};
-                padding: 0;
-                flex-shrink: 0;
-              "
-              {{ block.shopify_attributes }}
-            ></div>
+         {%- when 'divider' -%}
+  <div
+    class="banner__divider"
+    style="
+      display: block;
+      width: {{ block.settings.width }}px;
+      height: {{ block.settings.thickness }}px;
+      background-color: {{ block.settings.color }};
+      flex-shrink: 0;
+
+      {% case block.settings.alignment %}
+        {% when 'left' %}
+          margin-left: 0 !important;
+          margin-right: auto !important;
+        {% when 'right' %}
+          margin-left: auto !important;
+          margin-right: 0 !important;
+        {% else %}
+          margin-left: auto !important;
+          margin-right: auto !important;
+      {% endcase %}
+    "
+    {{ block.shopify_attributes }}
+  ></div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -741,6 +754,26 @@
           "id": "color",
           "label": "Color",
           "default": "#c5a253"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alignment",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
         }
       ]
     },
