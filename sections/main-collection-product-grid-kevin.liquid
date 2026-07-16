@@ -181,7 +181,8 @@
                       quick_add: section.settings.quick_add,
                       section_id: section.id,
                       product_view_context: 'collection',
-                      quick_add_style: section.settings.quick_add_style
+                      quick_add_style: section.settings.quick_add_style,
+                      quick_add_button_style: section.settings.quick_add_button_style
                     %}
                   </li>
                   {%- assign skip_card_product_styles = true -%}
@@ -366,6 +367,22 @@
         }
       ],
       "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "quick_add_button_style",
+      "label": "Quick add button appearance",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Solid"
+        },
+        {
+          "value": "secondary",
+          "label": "Outline"
+        }
+      ],
+      "default": "primary"
     },
     {
       "type": "header",

@@ -1,70 +1,100 @@
+/* ==========================================================================
+   Global Typography
+   ========================================================================== */
+
 /* Italic accent on section eyebrow labels */
+
 .section-header__description,
 .image-banner__text-wrapper .caption {
   font-style: italic;
-} /* Tighten letter-spacing on all caps labels */
+}
+
+/* Uppercase label spacing */
+
 .caption,
 .button {
   letter-spacing: 0.12em;
-} /* Cormorant looks better with slightly tighter line-height on large headings */
+}
+
+/* Tighter large-heading line height */
+
 h1,
 h2 {
   line-height: 1.1;
-} /* ── Secondary Button (ghost / outline) ── */
+}
+
+
+/* ==========================================================================
+   Secondary Buttons
+   ========================================================================== */
+
 .button--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 32px;
+
+  background-color: transparent;
+  border-radius: 0;
+  opacity: 1 !important;
+
   font-family: "Lato", sans-serif;
   font-size: 0.95rem;
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  background-color: transparent;
-  padding: 14px 32px;
-  border-radius: 0;
-  opacity: 1 !important;
-  transition: border-color 0.6s ease, color 0.6s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+  transition:
+    background-color 0.6s ease,
+    border-color 0.6s ease,
+    color 0.6s ease;
 }
+
 .button--secondary:hover {
   background-color: #c5a253;
   color: #0a0a0a;
-  border-radius: 0px;
-} /*Product Cards*/
+  border-radius: 0;
+}
 
 
 /* ==========================================================================
    Product Cards
    ========================================================================== */
 
-/* Card spacing */
+/* Card information spacing */
 
 .card-information {
   padding-top: 0.75rem;
   padding-bottom: 0;
 }
 
-/* Typography */
+/* Product title */
 
 .card__information .card__heading {
+  margin: 0 0 0.35rem;
+
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.45;
   letter-spacing: 0.07em;
-  margin: 0 0 0.35rem;
+
   opacity: 0.6;
 }
 
-.card-information .card__heading a {
+.card__heading a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Product price */
 
 .card-information .price {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.15rem;
   letter-spacing: 0.08em;
   color: #888;
+  opacity: 0.7;
 }
 
 .card-information .price-item {
@@ -73,46 +103,15 @@ h2 {
 
 
 /* ==========================================================================
-   Product Cards — Slide-Up Quick Add
+   Product Cards — Slide-Up Quick Add Appearance
    ========================================================================== */
 
-/* Positioning */
+/*
+  Positioning, visibility, hover behavior, mobile behavior,
+  and card-link overlay handling live in card-product-kevin.liquid.
+*/
 
-.card-wrapper--quick-add-slide .card__inner {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-wrapper--quick-add-slide .quick-add--slide-up {
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  z-index: 4;
-
-  width: 100%;
-  margin: 0;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transform: translateY(100%);
-
-  transition:
-    transform 0.3s ease-out,
-    opacity 0.3s ease-out,
-    visibility 0.3s ease-out;
-}
-
-.card-wrapper--quick-add-slide:hover .quick-add--slide-up,
-.card-wrapper--quick-add-slide:focus-within .quick-add--slide-up {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* Form wrapper */
+/* Ensure the form fills the slide-up container */
 
 .card-wrapper--quick-add-slide .quick-add--slide-up product-form,
 .card-wrapper--quick-add-slide .quick-add--slide-up modal-opener,
@@ -121,7 +120,7 @@ h2 {
   width: 100%;
 }
 
-/* Button */
+/* Quick-add button styling */
 
 .card-wrapper--quick-add-slide .quick-add--slide-up .quick-add__submit {
   width: 100%;
@@ -132,11 +131,11 @@ h2 {
 
   padding: 0 1rem;
 
-  background: #c5a253;
+  background-color: #c5a253;
   color: #0a0a0a;
 
   font-family: "Lato", sans-serif;
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.22em;
@@ -147,7 +146,7 @@ h2 {
   box-shadow: none;
 }
 
-/* Remove Dawn pseudo borders */
+/* Remove Dawn's generated button borders */
 
 .card-wrapper--quick-add-slide .quick-add__submit::before,
 .card-wrapper--quick-add-slide .quick-add__submit::after {
@@ -170,30 +169,12 @@ h2 {
 
 
 /* ==========================================================================
-   Responsive
-   ========================================================================== */
-
-@media screen and (max-width: 749px) {
-
-  .card-wrapper--quick-add-slide .quick-add--slide-up {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-}
-
-
-/* ==========================================================================
    Accessibility
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
-  .card-wrapper--quick-add-slide .quick-add--slide-up,
   .card-wrapper--quick-add-slide .card__media img {
     transition: none;
   }
-
 }
+
