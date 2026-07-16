@@ -84,7 +84,7 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Feautred Pieces",
+        "title": "Featured Pieces",
         "heading_size": "h1",
         "description": "<p>CURATED SELECTION</p>",
         "show_description": false,
