@@ -150,7 +150,15 @@ h2 {
   box-shadow: none;
 }
 
+@media screen and (max-width: 749px) {
+  .card-wrapper--quick-add-slide .quick-add--slide-up .quick-add__submit {
+    height: 36px;
+    min-height: 36px;
 
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+}
 /* ==========================================================================
    Product Cards — Image Hover
    ========================================================================== */
