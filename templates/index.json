@@ -72,20 +72,21 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "featured_collection_kevin_dDUPWQ": {
+      "type": "featured-collection-kevin",
       "custom_css": [
         ".collection__title {display: flex; flex-direction: column; align-items: center; text-align: center;}",
         ".collection__description {order: 1;}",
         ".collection__description p {font-size: 1rem; color: #c5a253; letter-spacing: 0.35rem;}",
-        ".collection__title .title {order: 2; padding-top: 12px; padding-bottom: 18px; background-image: linear-gradient(#c5a253, #c5a253); background-repeat: no-repeat; background-position: center bottom; background-size: 50px 1px;}",
+        ".collection__title .title {order: 2; padding-top: 12px; padding-bottom: 18px; background-image: linear-gradient(#c5a253, #c5a253); background-repeat: no-repeat; background-position: center bottom; background-size: 50px 1px; font-weight: 300; opacity: 0.75;}",
         ".collection slider-component {margin-top: 8rem;}"
       ],
+      "name": "Featured Collection - Kevin",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "frontpage",
+        "products_to_show": 4,
         "title": "Featured Pieces",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "description": "<p>CURATED SELECTION</p>",
         "show_description": false,
         "description_style": "body",
@@ -99,8 +100,10 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
+        "show_rating": true,
+        "quick_add": "standard",
+        "quick_add_button_style": "primary",
+        "quick_add_style": "slide_up",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 100,
@@ -193,7 +196,7 @@
   },
   "order": [
     "image_banner_kevin_4Ctjyt",
-    "featured_collection",
+    "featured_collection_kevin_dDUPWQ",
     "image_banner_kevin_peHKWi"
   ]
 }
