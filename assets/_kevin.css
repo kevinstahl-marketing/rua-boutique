@@ -182,3 +182,59 @@ h2 {
   }
 }
 
+/* ==========================================================================
+   Collection List - Editorial
+   ========================================================================== */
+
+.collection-list-kevin--editorial .card__heading {
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.collection-list-kevin--editorial .card__heading a {
+  letter-spacing: 0.18em;
+  font-weight: 100;
+}
+
+.collection-list-kevin__subheading {
+  color: rgb(197, 162, 83);
+}
+
+.collection-list-kevin--editorial .card__heading::after {
+  content: "";
+  display: block;
+
+  width: 4rem;
+  height: 1px;
+
+  margin: 1rem auto 0;
+
+  background-color: rgb(197, 162, 83);
+
+  transform: scaleX(0.45);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.collection-list-kevin--editorial .card:hover .card__heading::after {
+  transform: scaleX(1);
+}
+
+.collection-list-title::after {
+  content: "";
+  display: block;
+
+  width: 4.5rem;
+  height: 1px;
+
+  margin: 1.5rem auto 7rem;
+
+  background-color: rgba(197, 163, 83, 0.582);
+}
+
+.collection__description p {
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  color: rgb(197, 162, 83);
+  text-transform: uppercase;
+}

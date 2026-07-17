@@ -1,0 +1,684 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+
+    --collection-subheading-spacing: {{ section.settings.subheading_letter_spacing | divided_by: 100.0 }}em;
+    --collection-subheading-bottom: {{ section.settings.subheading_bottom_spacing }}px;
+
+    --collection-title-color: {{ section.settings.editorial_title_color }};
+    --collection-title-size: {{ section.settings.editorial_title_size | divided_by: 10.0 }}rem;
+    --collection-title-spacing: {{ section.settings.editorial_letter_spacing | divided_by: 100.0 }}em;
+    --collection-title-padding-x: {{ section.settings.editorial_padding_horizontal }}px;
+    --collection-title-padding-bottom: {{ section.settings.editorial_padding_bottom }}px;
+
+    --collection-overlay-opacity: {{ section.settings.editorial_overlay_opacity | divided_by: 100.0 }};
+    --collection-hover-scale: {{ section.settings.editorial_hover_zoom | divided_by: 1000.0 | plus: 1 }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Section heading and subheading
+  -------------------------------------------------------------------------- */
+
+  .section-{{ section.id }}-padding
+    .title-wrapper-with-link {
+    width: 100%;
+  }
+
+  .section-{{ section.id }}-padding
+    .collection-list-kevin__heading-group {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+
+    {% case section.settings.heading_alignment %}
+      {% when 'center' %}
+        text-align: center;
+      {% when 'right' %}
+        text-align: right;
+      {% else %}
+        text-align: left;
+    {% endcase %}
+  }
+
+  .section-{{ section.id }}-padding
+    .collection-list-kevin__subheading {
+    width: 100%;
+    margin: 0 0 var(--collection-subheading-bottom);
+    letter-spacing: var(--collection-subheading-spacing);
+  }
+
+  .section-{{ section.id }}-padding
+    .collection-list-title {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding
+      .title-wrapper-with-link {
+      display: block;
+    }
+
+    .section-{{ section.id }}-padding
+      .collection-list-kevin__heading-group {
+      width: 100%;
+    }
+
+    .section-{{ section.id }}-padding
+      .collection-list-kevin__subheading,
+    .section-{{ section.id }}-padding
+      .collection-list-title {
+      width: 100%;
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     Minimal editorial cards
+  -------------------------------------------------------------------------- */
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hide Dawn's duplicate title below the image */
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card
+    > .card__content {
+    display: none;
+  }
+
+  /* Overlay the inner title on the image */
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner
+    > .card__content {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 3;
+
+    display: block;
+    width: 100%;
+    height: auto;
+
+    padding:
+      0
+      var(--collection-title-padding-x)
+      var(--collection-title-padding-bottom);
+
+    pointer-events: none;
+
+    {% case section.settings.editorial_text_alignment %}
+      {% when 'left' %}
+        text-align: left;
+      {% when 'right' %}
+        text-align: right;
+      {% else %}
+        text-align: center;
+    {% endcase %}
+  }
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner
+    > .card__content
+    .card__information {
+    display: block;
+    padding: 0;
+  }
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner
+    > .card__content
+    .card__heading {
+    margin: 0;
+    font-size: var(--collection-title-size);
+    letter-spacing: var(--collection-title-spacing);
+    line-height: 1.1;
+  }
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner
+    > .card__content
+    .card__heading
+    a {
+    position: relative;
+    z-index: 4;
+
+    display: block;
+    color: var(--collection-title-color);
+    pointer-events: auto;
+  }
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__heading
+    .icon-wrap {
+    display: none;
+  }
+
+  /* Image overlay */
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      transparent 45%,
+      rgb(0 0 0 / var(--collection-overlay-opacity)) 100%
+    );
+  }
+
+  /* Image hover */
+
+  .collection-list-kevin--editorial
+    .section-{{ section.id }}-padding
+    .card__media
+    img {
+    transition: transform 0.7s ease;
+  }
+
+  @media screen and (hover: hover) {
+    .collection-list-kevin--editorial
+      .section-{{ section.id }}-padding
+      .card:hover
+      .card__media
+      img {
+      transform: scale(var(--collection-hover-scale));
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+-%}
+
+<div
+  class="
+    color-{{ section.settings.color_scheme }}
+    gradient
+    collection-list-kevin
+    collection-list-kevin--{{ section.settings.design_style }}
+  "
+>
+  <div class="collection-list-wrapper page-width isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+    {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+        <div class="collection-list-kevin__heading-group">
+          {%- unless section.settings.subheading == blank -%}
+            <div class="collection-list-kevin__subheading caption">
+              {{ section.settings.subheading }}
+            </div>
+          {%- endunless -%}
+
+          <h2
+            id="SectionHeading-{{ section.id }}"
+            class="collection-list-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          >
+            {{ section.settings.title }}
+          </h2>
+        </div>
+
+        {%- if section.settings.show_view_all and show_mobile_slider -%}
+          <a
+            href="{{ routes.collections_url }}"
+            id="ViewAll-{{ section.id }}"
+            class="link underlined-link large-up-hide{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+          >
+            {{- 'sections.collection_list.view_all' | t -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <ul
+        class="collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- liquid
+          assign columns = section.blocks.size
+          if columns > 3
+            assign columns = 3
+          endif
+        -%}
+        {%- for block in section.blocks -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+            {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+            {% render 'card-collection',
+              card_collection: block.settings.collection,
+              media_aspect_ratio: section.settings.image_ratio,
+              columns: columns,
+              placeholder_image: placeholder_image
+            %}
+          </li>
+        {%- endfor -%}
+      </ul>
+      {%- if show_mobile_slider -%}
+        <div class="slider-buttons">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+
+    {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
+      <div
+        class="center collection-list-view-all{% if show_mobile_slider %} small-hide medium-hide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        <a
+          href="{{ routes.collections_url }}"
+          class="button"
+          id="ViewAllButton-{{ section.id }}"
+          aria-labelledby="ViewAllButton-{{ section.id }} SectionHeading-{{ section.id }}"
+        >
+          {{- 'sections.collection_list.view_all' | t -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection List - Kevin",
+  "tag": "section",
+  "class": "section section-collection-list section-collection-list-kevin",
+  "max_blocks": 15,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.collection-list.settings.title.default",
+      "label": "t:sections.collection-list.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "design_style",
+      "label": "Design style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "editorial",
+          "label": "Minimal editorial"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "header",
+      "content": "Subheading style"
+    },
+    {
+      "type": "range",
+      "id": "subheading_letter_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "%",
+      "label": "Subheading letter spacing",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "subheading_bottom_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Space below subheading",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Minimal editorial style"
+    },
+    {
+      "type": "color",
+      "id": "editorial_title_color",
+      "label": "Collection title color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "editorial_title_size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Collection title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "editorial_letter_spacing",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "%",
+      "label": "Collection title letter spacing",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "editorial_text_alignment",
+      "label": "Collection title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "editorial_padding_horizontal",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Horizontal title padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "editorial_padding_bottom",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "label": "Bottom title padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "editorial_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay strength",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "editorial_hover_zoom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Image hover zoom",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collection-list.settings.header_layout.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.collection-list.settings.image_ratio.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.collection-list.settings.columns_desktop.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": false,
+      "label": "t:sections.collection-list.settings.show_view_all.label",
+      "info": "t:sections.collection-list.settings.show_view_all.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collection-list.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.collection-list.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.collection-list.settings.columns_mobile.options__2.label"
+        }
+      ],
+      "default": "1",
+      "label": "t:sections.collection-list.settings.columns_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "t:sections.collection-list.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "t:sections.collection-list.blocks.featured_collection.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List - Kevin",
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
