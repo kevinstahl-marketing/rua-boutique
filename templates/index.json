@@ -84,7 +84,7 @@
       "name": "Curated Selection",
       "settings": {
         "collection": "frontpage",
-        "products_to_show": 4,
+        "products_to_show": 2,
         "title": "Featured Pieces",
         "heading_size": "h0",
         "description": "<p>CURATED SELECTION</p>",
@@ -195,48 +195,62 @@
         "show_text_below": false
       }
     },
-    "collection_list_6K8cyF": {
-      "type": "collection-list",
+    "collection_list_kevin_ViDKTJ": {
+      "type": "collection-list-kevin",
       "blocks": {
-        "featured_collection_jBARLt": {
+        "featured_collection_JMx6W6": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "new-arrivals"
           }
         },
-        "featured_collection_yTKWfy": {
+        "featured_collection_BVUfqM": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "dresses"
           }
         },
-        "featured_collection_cyDqPk": {
+        "featured_collection_VTVrmY": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "accessories"
           }
         },
-        "featured_collection_RHzzPL": {
+        "featured_collection_WVx3Km": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "outerwear"
           }
         }
       },
       "block_order": [
-        "featured_collection_jBARLt",
-        "featured_collection_yTKWfy",
-        "featured_collection_cyDqPk",
-        "featured_collection_RHzzPL"
+        "featured_collection_JMx6W6",
+        "featured_collection_BVUfqM",
+        "featured_collection_VTVrmY",
+        "featured_collection_WVx3Km"
       ],
-      "name": "t:sections.collection-list.presets.name",
+      "custom_css": [],
+      "name": "Collection List - Kevin",
       "settings": {
+        "subheading": "BROWSE BY CATEGORY",
         "title": "Collections",
+        "heading_alignment": "center",
         "heading_size": "h1",
+        "design_style": "editorial",
+        "subheading_letter_spacing": 30,
+        "subheading_bottom_spacing": 15,
+        "editorial_title_color": "#faf8f5",
+        "editorial_title_size": 15,
+        "editorial_letter_spacing": 10,
+        "editorial_text_alignment": "center",
+        "editorial_padding_horizontal": 16,
+        "editorial_padding_bottom": 10,
+        "editorial_overlay_opacity": 60,
+        "editorial_hover_zoom": 100,
         "image_ratio": "portrait",
-        "columns_desktop": 2,
-        "color_scheme": "scheme-2",
-        "show_view_all": true,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-3",
+        "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 100,
@@ -280,13 +294,24 @@
         "padding_top": 100,
         "padding_bottom": 100
       }
+    },
+    "custom_liquid_txtAXR": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .rua-brand-statement {\n    padding: 7rem 2.4rem;\n    text-align: center;\n  }\n\n  .rua-brand-statement__inner {\n    max-width: 60rem;\n    margin: 0 auto;\n  }\n\n  .rua-brand-statement__rule {\n    display: block;\n    width: 0;\n    height: 4.8rem;\n    margin: 0 auto;\n    overflow: hidden;\n    border-left: 1px solid rgba(197, 162, 83, 0.4);\n  }\n\n  .rua-brand-statement__rule--bottom {\n    margin-top: 4.8rem;\n  }\n\n  .rua-brand-statement__heading {\n    margin: 4.8rem 0 4rem;\n\n    font-family: var(--font-heading-family);\n    font-size: clamp(3.2rem, 5vw, 5.2rem);\n    font-weight: 300;\n    font-style: italic;\n    line-height: 1.15;\n    letter-spacing: 0.02em;\n\n    color: rgb(var(--color-foreground));\n  }\n\n  .rua-brand-statement__body {\n    max-width: 56rem;\n    margin: 0 auto 4.8rem;\n\n    font-family: var(--font-body-family);\n    font-size: 1.3rem;\n    font-weight: 300;\n    line-height: 2.2;\n\n    color: rgba(var(--color-foreground), 0.6);\n  }\n\n  .rua-brand-statement__link {\n    display: inline-flex;\n    align-items: center;\n    gap: 0.6rem;\n\n    padding-bottom: 0.3rem;\n\n    font-family: var(--font-body-family);\n    font-size: 1rem;\n    font-weight: 400;\n    letter-spacing: 0.28em;\n    text-transform: uppercase;\n    text-decoration: none;\n\n    color: rgba(var(--color-foreground), 0.75);\n    border-bottom: 1px solid rgba(var(--color-foreground), 0.35);\n\n    transition:\n      color .25s ease,\n      border-color .25s ease;\n  }\n\n  .rua-brand-statement__link svg {\n    flex-shrink: 0;\n    transition: transform .25s ease;\n  }\n\n  .rua-brand-statement__link:hover {\n    color: rgb(197, 162, 83);\n    border-color: rgb(197, 162, 83);\n  }\n\n  .rua-brand-statement__link:hover svg {\n    transform: translateX(.3rem);\n  }\n\n  @media screen and (max-width: 749px) {\n    .rua-brand-statement {\n      padding: 6rem 2rem;\n    }\n\n    .rua-brand-statement__rule {\n      height: 3.6rem;\n    }\n\n    .rua-brand-statement__heading {\n      margin: 3.6rem 0 3rem;\n      font-size: clamp(3rem, 10vw, 4.2rem);\n    }\n\n    .rua-brand-statement__body {\n      margin-bottom: 3.6rem;\n      font-size: 1.2rem;\n      line-height: 2;\n    }\n\n    .rua-brand-statement__rule--bottom {\n      margin-top: 3.6rem;\n    }\n  }\n</style>\n\n<section class=\"rua-brand-statement\">\n  <div class=\"rua-brand-statement__inner\">\n\n    <span class=\"rua-brand-statement__rule\" aria-hidden=\"true\">&nbsp;</span>\n\n    <h2 class=\"rua-brand-statement__heading\">\n      Wear What Inspires You.\n    </h2>\n\n    <p class=\"rua-brand-statement__body\">\n      Every piece is thoughtfully selected to help you feel confident,\n      comfortable, and effortlessly yourself. Discover timeless styles\n      you'll reach for again and again.\n    </p>\n\n    <a href=\"/collections/all\" class=\"rua-brand-statement__link\">\n      <span>Shop the Collection</span>\n\n      <svg\n        width=\"13\"\n        height=\"13\"\n        viewBox=\"0 0 24 24\"\n        fill=\"none\"\n        stroke=\"currentColor\"\n        stroke-width=\"1.5\"\n        aria-hidden=\"true\">\n        <path d=\"M9 18l6-6-6-6\"></path>\n      </svg>\n    </a>\n\n    <span class=\"rua-brand-statement__rule rua-brand-statement__rule--bottom\" aria-hidden=\"true\">&nbsp;</span>\n\n  </div>\n</section>",
+        "color_scheme": "scheme-3",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "image_banner_kevin_4Ctjyt",
     "featured_collection_kevin_dDUPWQ",
     "image_banner_kevin_peHKWi",
-    "collection_list_6K8cyF",
-    "featured_collection_kevin_qQidh6"
+    "collection_list_kevin_ViDKTJ",
+    "featured_collection_kevin_qQidh6",
+    "custom_liquid_txtAXR"
   ]
 }

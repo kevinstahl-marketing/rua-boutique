@@ -11,8 +11,73 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_liquid_RQxyTa": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .rua-newsletter {\n    background-color: #0f0f0f;\n    border-top: 1px solid rgba(255, 255, 255, 0.05);\n    padding: 96px 24px 112px;\n    text-align: center;\n  }\n\n  .rua-newsletter__inner {\n    width: 100%;\n    max-width: 720px;\n    margin: 0 auto;\n  }\n\n  .rua-newsletter__eyebrow {\n    margin: 0 0 18px;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 0.875rem;\n    font-weight: 400;\n    line-height: 1.2;\n    letter-spacing: 0.24em;\n    text-transform: uppercase;\n\n    color: #c5a253;\n  }\n\n  .rua-newsletter__heading {\n    margin: 0 0 20px;\n\n    font-family: \"Cormorant Garamond\", serif;\n    font-size: clamp(3rem, 6vw, 4.75rem);\n    font-weight: 300;\n    line-height: 1.08;\n    letter-spacing: 0.02em;\n\n    color: #f0ece4;\n  }\n\n  .rua-newsletter__subtext {\n    max-width: 520px;\n    margin: 0 auto 48px;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 1.05rem;\n    font-weight: 300;\n    line-height: 1.8;\n    letter-spacing: 0.03em;\n\n    color: #8a8a8a;\n  }\n\n  .rua-newsletter__form {\n    width: 100%;\n    max-width: 560px;\n    margin: 0 auto;\n  }\n\n  .rua-newsletter__fields {\n    display: flex;\n    align-items: stretch;\n    width: 100%;\n    gap: 0;\n  }\n\n  .rua-newsletter__input {\nfont-size: 0.9rem;\n    flex: 1 1 auto;\n    min-width: 0;\n\n    height: 56px;\n    margin: 0;\n    padding: 0 24px;\n\n    background: transparent;\n    border: 1px solid rgba(255, 255, 255, 0.12);\n    border-right: none;\n    border-radius: 0;\n    outline: none;\n    box-shadow: none;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 1rem;\n    font-weight: 300;\n    letter-spacing: 0.02em;\n\n    color: #f0ece4;\n\n    transition: border-color .35s ease;\n  }\n\n  .rua-newsletter__input::placeholder {\n    color: #5d5d5d;\n    opacity: 1;\n  }\n\n  .rua-newsletter__input:focus {\n    border-color: #c5a253;\n  }\n\n  .rua-newsletter__button {\n    flex: 0 0 auto;\n\n    height: 56px;\n    margin: 0;\n    padding: 0 34px;\n\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n\n    background: #c5a253;\n    border: 1px solid #c5a253;\n    border-radius: 0;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1;\n    letter-spacing: 0.24em;\n    text-transform: uppercase;\n    white-space: nowrap;\n\n    color: #0a0a0a;\n    cursor: pointer;\n\n    transition:\n      background-color .45s ease,\n      border-color .45s ease,\n      color .45s ease;\n  }\n\n  .rua-newsletter__button:hover {\n    background: #d4b262;\n    border-color: #d4b262;\n  }\n\n  .rua-newsletter__success,\n  .rua-newsletter__error {\n    margin-top: 24px;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 0.9rem;\n    font-weight: 300;\n    line-height: 1.6;\n    letter-spacing: 0.08em;\n\n    color: #c5a253;\n  }\n\n  .rua-newsletter__error {\n    color: #f0ece4;\n  }\n\n  .rua-newsletter__disclaimer {\n    margin-top: 28px;\n\n    font-family: \"Lato\", sans-serif;\n    font-size: 01rem;\n    font-weight: 300;\n    line-height: 1.6;\n    letter-spacing: 0.06em;\n\n    color: #575757;\n  }\n\n  @media screen and (max-width: 749px) {\n\n    .rua-newsletter {\n      padding: 72px 20px 84px;\n    }\n\n    .rua-newsletter__eyebrow {\n      font-size: 0.75rem;\n    }\n\n    .rua-newsletter__heading {\n      font-size: 2.8rem;\n    }\n\n    .rua-newsletter__subtext {\n      max-width: 100%;\n      margin-bottom: 36px;\n\n      font-size: 0.95rem;\n      line-height: 1.75;\n    }\n\n    .rua-newsletter__input,\n    .rua-newsletter__button {\n      height: 52px;\n    }\n\n    .rua-newsletter__input {\n      padding: 0 18px;\n      font-size: 0.95rem;\n    }\n\n    .rua-newsletter__button {\n      padding: 0 22px;\n\n      font-size: 0.68rem;\n      letter-spacing: 0.18em;\n    }\n\n    .rua-newsletter__success,\n    .rua-newsletter__error,\n    .rua-newsletter__disclaimer {\n      font-size: 0.75rem;\n    }\n  }\n\n  @media screen and (max-width: 420px) {\n\n    .rua-newsletter__fields {\n      flex-direction: column;\n      gap: 10px;\n    }\n\n    .rua-newsletter__input {\n      border-right: 1px solid rgba(255,255,255,.12);\n    }\n\n    .rua-newsletter__button {\n      width: 100%;\n    }\n  }\n</style>\n\n<section class=\"rua-newsletter\">\n  <div class=\"rua-newsletter__inner\">\n\n    <p class=\"rua-newsletter__eyebrow\">\n      The Inner Circle\n    </p>\n\n    <h2 class=\"rua-newsletter__heading\">\n      Join the Edit\n    </h2>\n\n    <p class=\"rua-newsletter__subtext\">\n      Receive new arrivals, exclusive access, and curated stories — nothing more.\n    </p>\n\n    {% form 'customer', class: 'rua-newsletter__form' %}\n      <input\n        type=\"hidden\"\n        name=\"contact[tags]\"\n        value=\"newsletter\"\n      >\n\n      <div class=\"rua-newsletter__fields\">\n        <input\n          type=\"email\"\n          name=\"contact[email]\"\n          class=\"rua-newsletter__input\"\n          value=\"{{ form.email }}\"\n          placeholder=\"Your email address\"\n          aria-label=\"Your email address\"\n          autocorrect=\"off\"\n          autocapitalize=\"off\"\n          autocomplete=\"email\"\n          required\n        >\n\n        <button\n          type=\"submit\"\n          class=\"rua-newsletter__button\"\n          name=\"commit\"\n        >\n          Subscribe\n        </button>\n      </div>\n\n      {% if form.errors %}\n        <p class=\"rua-newsletter__error\">\n          Please enter a valid email address.\n        </p>\n      {% endif %}\n\n      {% if form.posted_successfully? %}\n        <p class=\"rua-newsletter__success\">\n          Thank you — welcome to the circle.\n        </p>\n      {% endif %}\n    {% endform %}\n\n    <p class=\"rua-newsletter__disclaimer\">\n      No spam. Unsubscribe anytime.\n    </p>\n\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "17842706082e8f1ffc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_183915f_tfaN4F": {
+          "type": "ai_gen_block_183915f",
+          "settings": {
+            "logo": "shopify://shop_images/Untitled_design_6.png",
+            "desktop_width_percent": 10,
+            "mobile_width_percent": 20,
+            "divider_color": "#c5a253",
+            "divider_width": 80,
+            "divider_height": 2,
+            "divider_spacing": 0,
+            "spacing_top": 16,
+            "spacing_bottom": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_183915f_tfaN4F"
+      ],
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_dqjUCh": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "link_list_tdAq6n": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "link_list_cKrNzM": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_dqjUCh",
+        "link_list_tdAq6n",
+        "link_list_cKrNzM"
+      ],
+      "custom_css": [
+        ".footer-block--newsletter {display: none !important;}"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -30,6 +95,8 @@
     }
   },
   "order": [
+    "custom_liquid_RQxyTa",
+    "17842706082e8f1ffc",
     "footer"
   ]
 }
