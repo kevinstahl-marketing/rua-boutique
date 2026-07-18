@@ -19,6 +19,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -29,7 +30,7 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
@@ -37,54 +38,33 @@
         "padding_bottom": 36
       }
     },
-    "image_banner_44JHEF": {
-      "type": "image-banner",
-      "blocks": {
-        "text_RMEx8U": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "buttons_7DDLU7": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "text_RMEx8U",
-        "buttons_7DDLU7"
-      ],
-      "custom_css": [
-        "/* ── Secondary Button (ghost / outline) ── */.button--secondary {font-family: 'Lato', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: #F0ECE4; background-color: transparent; border: 1px solid rgba(255, 255, 255, 0.35); padding: 14px 32px; border-radius: 0; opacity: 1; transition: border-color 0.3s ease, color 0.3s ease; display: inline-flex; align-items: center; justify-content: center;}",
-        ".button--secondary:hover {border-color: #C5A253; color: #C5A253;}"
-      ],
-      "name": "t:sections.image-banner.presets.name",
+    "main_collection_product_grid_kevin_PhXAic": {
+      "type": "main-collection-product-grid-kevin",
+      "name": "Main Product Grid - Kevin",
       "settings": {
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "",
-        "stack_images_on_mobile": true,
-        "mobile_content_alignment": "center",
-        "show_text_below": true
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "quick_add_style": "slide_up",
+        "quick_add_button_style": "primary",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "image_banner_44JHEF"
+    "main_collection_product_grid_kevin_PhXAic"
   ]
 }
