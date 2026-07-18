@@ -80,8 +80,8 @@ h2 {
 
 .button--secondary:not(.quick-add__submit) {
   background-color: transparent;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13.5px);
 }
 
 .button--secondary:not(.quick-add__submit):hover {
