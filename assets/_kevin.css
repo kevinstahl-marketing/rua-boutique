@@ -72,14 +72,7 @@ h2 {
   color: rgb(var(--color-button)) !important;
 }
 
-.button:not(.button--secondary):not(.quick-add__submit):hover::after,
-.button--primary:not(.quick-add__submit):hover::after {
-  box-shadow:
-    0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-      rgba(var(--color-button), var(--border-opacity)),
-    0 0 0 var(--buttons-border-width)
-      rgb(var(--color-button)) !important;
-}
+
 
 /* ==========================================================================
    Outline Buttons → Filled on Hover
@@ -88,7 +81,7 @@ h2 {
 .button--secondary:not(.quick-add__submit) {
   background-color: transparent;
   backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .button--secondary:not(.quick-add__submit):hover {
@@ -96,13 +89,6 @@ h2 {
   color: rgb(var(--color-button)) !important;
 }
 
-.button--secondary:not(.quick-add__submit):hover::after {
-  box-shadow:
-    0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
-      rgba(var(--color-button), var(--border-opacity)),
-    0 0 0 var(--buttons-border-width)
-      rgb(var(--color-button)) !important;
-}
 
 /* ==========================================================================
    Product Cards
@@ -153,17 +139,23 @@ h2 {
   height: 100%;
 }
 
-.card__information .card__heading {
+/* Product cards only */
+.card-product-wrapper .card__information .card__heading {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
-.card__information .card-information {
+.card-product-wrapper .card__information .card-information {
   margin-top: auto;
 }
 
+@media screen and (max-width: 749px) {
+  .card-product-wrapper .card__information .card__heading {
+    -webkit-line-clamp: 1;
+  }
+}
 /* ==========================================================================
    Product Cards — Slide-Up Quick Add Appearance
    ========================================================================== */
@@ -221,6 +213,7 @@ h2 {
     letter-spacing: 0.14em;
   }
 }
+
 /* ==========================================================================
    Product Cards — Image Hover
    ========================================================================== */
@@ -306,14 +299,17 @@ h2 {
   align-items: center;
   text-align: center;
 }
+
 .collection__description {
   order: 1;
 }
+
 .collection__description p {
   font-size: 1rem;
   color: #c5a253;
   letter-spacing: 0.35rem;
 }
+
 .collection__title .title {
   order: 2;
   padding-top: 12px;
@@ -325,6 +321,7 @@ h2 {
   font-weight: 300;
   opacity: 0.75;
 }
+
 .collection slider-component {
   margin-top: 8rem;
 }
