@@ -251,10 +251,6 @@ h2 {
     letter-spacing: 0.18em;
   font-weight: 100;
   font-size: clamp(1rem, 3vw, 2rem);
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .collection-list-kevin__subheading {
@@ -338,4 +334,131 @@ h2 {
 
 .center.collection__view-all {
   margin-top: 7rem;
+}
+
+/* ==========================================================================
+   Header — Desktop Navigation
+   ========================================================================== */
+
+@media screen and (min-width: 990px) {
+  .header__inline-menu .header__menu-item,
+  .header__inline-menu .header__active-menu-item {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .header__inline-menu .header__menu-item:hover,
+  .header__inline-menu .header__menu-item:hover .header__active-menu-item {
+    color: #c5a253;
+  }
+
+  .header__inline-menu .header__active-menu-item {
+    color: #c5a253;
+  }
+}
+
+
+/* ==========================================================================
+   Header — Mobile Drawer Navigation
+   ========================================================================== */
+
+@media screen and (max-width: 989px) {
+  .menu-drawer__navigation .menu-drawer__menu-item,
+  .menu-drawer__navigation .menu-drawer__close-button {
+    font-family: "Lato", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #777777;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .menu-drawer__navigation .menu-drawer__menu-item:hover,
+  .menu-drawer__navigation .menu-drawer__close-button:hover,
+  .menu-drawer__navigation .menu-drawer__menu-item--active {
+    color: #c5a253;
+  }
+}
+
+
+/* ==========================================================================
+   Footer — Column Headings
+   ========================================================================== */
+
+.footer .footer-block__heading {
+  margin-bottom: 28px;
+
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+
+  color: #c5a253;
+}
+
+
+/* ==========================================================================
+   Footer — Navigation Links
+   ========================================================================== */
+
+.footer .footer-block__details-content .list-menu__item--link {
+  font-family: "Lato", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+
+  color: #4a4a4a;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer .footer-block__details-content .list-menu__item--link:hover,
+.footer .footer-block__details-content .list-menu__item--active {
+  color: #f0ece4;
+}
+
+
+/* ==========================================================================
+   Footer — Copyright & Legal Links
+   ========================================================================== */
+
+.footer .footer__copyright,
+.footer .footer__copyright .copyright__content,
+.footer .footer__copyright .copyright__content a,
+.footer .policies a {
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+
+  color: #333333;
+  text-decoration: none;
+}
+
+.footer .footer__copyright .copyright__content a,
+.footer .policies a {
+  transition: color 0.2s ease;
+}
+
+.footer .footer__copyright .copyright__content a:hover,
+.footer .policies a:hover {
+  color: #777777;
+}
+
+/* ==========================================================================
+   Footer Width
+   ========================================================================== */
+
+.footer .page-width {
+  max-width: 100rem;
 }
