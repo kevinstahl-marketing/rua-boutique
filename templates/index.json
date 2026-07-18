@@ -53,13 +53,14 @@
         "buttons_dM9Ck8"
       ],
       "custom_css": [
-        ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0rem;}"
+        ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0rem;}",
+        "@media screen and (max-width: 749px) {.banner {min-height: 85vh !important; } .banner__media img {object-fit: cover; object-position: center center; }}"
       ],
       "name": "Image Banner - Kevin",
       "settings": {
         "image": "shopify://shop_images/photo-1680097727138-5034841dcd55.jpg",
         "image_overlay_opacity": 50,
-        "image_height": "medium",
+        "image_height": "large",
         "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
@@ -74,13 +75,7 @@
     },
     "featured_collection_kevin_dDUPWQ": {
       "type": "featured-collection-kevin",
-      "custom_css": [
-        ".collection__title {display: flex; flex-direction: column; align-items: center; text-align: center;}",
-        ".collection__description {order: 1;}",
-        ".collection__description p {font-size: 1rem; color: #c5a253; letter-spacing: 0.35rem;}",
-        ".collection__title .title {order: 2; padding-top: 12px; padding-bottom: 18px; background-image: linear-gradient(#c5a253, #c5a253); background-repeat: no-repeat; background-position: center bottom; background-size: 50px 1px; font-weight: 300; opacity: 0.75;}",
-        ".collection slider-component {margin-top: 8rem;}"
-      ],
+      "custom_css": [],
       "name": "Curated Selection",
       "settings": {
         "collection": "frontpage",
@@ -240,7 +235,7 @@
         "subheading_letter_spacing": 30,
         "subheading_bottom_spacing": 15,
         "editorial_title_color": "#faf8f5",
-        "editorial_title_size": 15,
+        "editorial_title_size": 13,
         "editorial_letter_spacing": 10,
         "editorial_text_alignment": "center",
         "editorial_padding_horizontal": 16,
@@ -259,13 +254,7 @@
     },
     "featured_collection_kevin_qQidh6": {
       "type": "featured-collection-kevin",
-      "custom_css": [
-        ".collection__title {display: flex; flex-direction: column; align-items: center; text-align: center;}",
-        ".collection__description {order: 1;}",
-        ".collection__description p {font-size: 1rem; color: #c5a253; letter-spacing: 0.35rem;}",
-        ".collection__title .title {order: 2; padding-top: 12px; padding-bottom: 18px; background-image: linear-gradient(#c5a253, #c5a253); background-repeat: no-repeat; background-position: center bottom; background-size: 50px 1px; font-weight: 300; opacity: 0.75;}",
-        ".collection slider-component {margin-top: 8rem;}"
-      ],
+      "custom_css": [],
       "name": "New Arrivals",
       "settings": {
         "collection": "frontpage",
