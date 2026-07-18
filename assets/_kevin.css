@@ -576,3 +576,59 @@ h2 {
   transform: scale(1);
 }
 
+/* ==========================================================================
+   Shopify Buy It Now Button
+   ========================================================================== */
+
+.shopify-payment-button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 14px 32px !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  background-color: rgb(var(--color-button)) !important;
+  color: rgb(var(--color-button-text)) !important;
+
+  font-family: "Lato", sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+
+  opacity: 1 !important;
+
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease !important;
+}
+
+/* Match filled Rua buttons → transparent on hover */
+
+.shopify-payment-button__button--unbranded:hover,
+.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+  background-color: transparent !important;
+  color: rgb(var(--color-button)) !important;
+}
+
+/* Remove Shopify's forced rounded hover state */
+
+.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
