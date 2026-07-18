@@ -140,22 +140,23 @@ h2 {
 }
 
 /* Product cards only */
-.card-product-wrapper .card__information .card__heading {
+.card-wrapper--quick-add-slide .card__information .card__heading {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
-.card-product-wrapper .card__information .card-information {
+.card-wrapper--quick-add-slide .card__information .card-information {
   margin-top: auto;
 }
 
 @media screen and (max-width: 749px) {
-  .card-product-wrapper .card__information .card__heading {
+  .card-wrapper--quick-add-slide .card__information .card__heading {
     -webkit-line-clamp: 1;
   }
 }
+
 /* ==========================================================================
    Product Cards — Slide-Up Quick Add Appearance
    ========================================================================== */
@@ -247,8 +248,13 @@ h2 {
 }
 
 .collection-list-kevin--editorial .card__heading a {
-  letter-spacing: 0.18em;
+    letter-spacing: 0.18em;
   font-weight: 100;
+  font-size: clamp(1rem, 3vw, 2rem);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .collection-list-kevin__subheading {
