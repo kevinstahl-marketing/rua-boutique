@@ -79,7 +79,7 @@
       "name": "Curated Selection",
       "settings": {
         "collection": "frontpage",
-        "products_to_show": 2,
+        "products_to_show": 4,
         "title": "Featured Pieces",
         "heading_size": "h0",
         "description": "<p>CURATED SELECTION</p>",
@@ -230,7 +230,7 @@
         "subheading": "BROWSE BY CATEGORY",
         "title": "Collections",
         "heading_alignment": "center",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "design_style": "editorial",
         "subheading_letter_spacing": 30,
         "subheading_bottom_spacing": 15,
@@ -258,7 +258,7 @@
       "name": "New Arrivals",
       "settings": {
         "collection": "frontpage",
-        "products_to_show": 2,
+        "products_to_show": 4,
         "title": "New Arrivals",
         "heading_size": "h0",
         "description": "<p>JUST IN</p>",
