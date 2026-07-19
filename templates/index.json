@@ -53,14 +53,14 @@
         "buttons_dM9Ck8"
       ],
       "custom_css": [
-        ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0rem;}",
+        ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0;}",
         ".banner__media img {object-position: center 72%;}",
         "@media screen and (max-width: 749px) {.banner {min-height: 75vh !important; } .banner__media img {object-fit: cover; }}"
       ],
       "name": "Image Banner - Kevin",
       "settings": {
         "image": "shopify://shop_images/pexels-alecdoua-35816159_1.jpg",
-        "image_overlay_opacity": 30,
+        "image_overlay_opacity": 60,
         "image_height": "medium",
         "image_behavior": "ambient",
         "desktop_content_position": "middle-center",
