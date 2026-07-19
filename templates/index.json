@@ -39,7 +39,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "EXPLORE THE COLLECTION",
-            "button_link_1": "",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -54,11 +54,12 @@
       ],
       "custom_css": [
         ".banner__text {font-family: \"Garamond\", serif; font-weight: 500 !important; line-height: 1; opacity: 0.75; margin-top: 0rem;}",
+        ".banner__media img {object-position: center 72%;}",
         "@media screen and (max-width: 749px) {.banner {min-height: 75vh !important; } .banner__media img {object-fit: cover; }}"
       ],
       "name": "Image Banner - Kevin",
       "settings": {
-        "image": "shopify://shop_images/photo-1680097727138-5034841dcd55.jpg",
+        "image": "shopify://shop_images/pexels-alecdoua-35816159_1.jpg",
         "image_overlay_opacity": 30,
         "image_height": "medium",
         "image_behavior": "ambient",
@@ -153,7 +154,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "SHOP NOW",
-            "button_link_1": "",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -257,7 +258,7 @@
       "custom_css": [],
       "name": "New Arrivals",
       "settings": {
-        "collection": "frontpage",
+        "collection": "new-arrivals",
         "products_to_show": 4,
         "title": "New Arrivals",
         "heading_size": "h0",
