@@ -79,11 +79,12 @@ h2 {
    ========================================================================== */
 
 .button--secondary:not(.quick-add__submit) {
-  background-color: transparent;
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
+  position: relative;
+  background: rgba(10, 10, 10, 0.08) !important;
+  backdrop-filter: blur(13px) !important;
+  -webkit-backdrop-filter: blur(13px) !important;
+  isolation: isolate;
 }
-
 .button--secondary:not(.quick-add__submit):hover {
   background-color: rgb(var(--color-button-text)) !important;
   color: rgb(var(--color-button)) !important;
